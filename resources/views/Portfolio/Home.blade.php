@@ -19,11 +19,14 @@
             <div>
                 <a href={{ url('/about') }}>about</a> <br />
                 <a href={{ url('/contact') }}>contact</a>
+                <a href={{ url('/product') }}>product</a>
 
             </div>
 
 
             <img src="{{ asset('portfolio/image.png') }}" alt="tag">
+
+
 
 
 
