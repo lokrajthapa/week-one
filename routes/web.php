@@ -12,12 +12,16 @@ Route::get('/', function () {
 Route::get('/about', function () {
     $githublink = 'https://github.com/lokrajthapa';
     return view('Portfolio.About', ['link' => $githublink]);
-});
+})->name('about');
 
 Route::get('/contact', function () {
 
     return view('Portfolio.Contact');
 });
+//wildcard route
+Route::get('some/route/{whatever}',function(){
+
+})->where('whatever','.+');
 
 
 // Route::get('/',[HomeController::class,'index']);
