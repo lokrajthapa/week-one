@@ -6,7 +6,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     $name = 'Lokraj Thapa';
     $address = 'Birauta-17';
-
     return view('Portfolio.Home', ['name' => $name, 'address' => $address]);
 });
 
