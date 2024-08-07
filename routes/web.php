@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    $name = 'Lokraj Thapa';
-    $address = 'Birauta-17';
+use App\Http\Controllers\MovieController;
 
-    return view('Portfolio.Home', ['name' => $name, 'address' => $address]);
-});
+// Route::get('/', function () {
+//     $name = 'Lokraj Thapa';
+//     $address = 'Birauta-17';
+
+//     return view('Portfolio.Home', ['name' => $name, 'address' => $address]);
+// });
 
 Route::get('/about', function () {
     $githublink = 'https://github.com/lokrajthapa';
@@ -24,22 +25,16 @@ Route::get('some/route/{whatever}',function(){
 
 })->where('whatever','.+');
 
-
-// Route::get('/',[HomeController::class,'index']);
-// Route::get('/about',[HomeController::class,'about']);
+//movie list
 
 
-// Route::get('/test', function(){
-//   return "Testing";
-// });
-//composer create-project laravel/laravel  FireFly
+
+Route::get('/', [MovieController::class, 'index']);
+Route::post('/movies', [MovieController::class, 'store']);
+Route::get('/movies/{id}/edit', [MovieController::class, 'edit']);
+Route::post('/movies/{id}/update', [MovieController::class, 'update']);
+Route::post('/movies/{id}/delete', [MovieController::class, 'destroy']);
 
 
-//vite for
-
-//herd link
 
 
-// Route::get('/about',function(){
-//     return view('About');
-// });
