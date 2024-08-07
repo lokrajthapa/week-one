@@ -37,11 +37,12 @@ class MovieController extends Controller
     public function edit(Request $request, $id){
 
         $movies = Session::get('movies', []);
+
         if (!isset($movies[$id])) {
             return redirect('/');
         }
-        $task = $movies[$id];
-        return view('movies.edit', compact('task', 'id'));
+        $movie = $movies[$id];
+        return view('movies.edit', compact('movie', 'id'));
 
 
     }

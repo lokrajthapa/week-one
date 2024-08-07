@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Task</title>
+    <title>Edit Movies</title>
 </head>
 <body>
-    <h1>Edit Task</h1>
+    <h1>Edit Movies</h1>
 
     @if ($errors->any())
         <div>
@@ -19,7 +19,7 @@
     <form action="/movies/{{ $id }}/update" method="POST">
         @csrf
         <label for="title">Movie:</label>
-        <input type="text" id="title" name="title" value="{{ old('title', $task['title']) }}" required>
+        <input type="text" id="title" name="title" value="{{ old('title', $movie['title']) }}" required>
         <button type="submit">Save Changes</button>
     </form>
 
